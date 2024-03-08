@@ -1,4 +1,4 @@
-import { BackgroundBeams } from "@/components/Beams";
+import { BackgroundBeams } from "@/components/ui/Beams";
 import React from "react";
 
 const Homepage = () => {
