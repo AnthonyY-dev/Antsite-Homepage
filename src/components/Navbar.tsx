@@ -1,15 +1,5 @@
 import Logo from "../assets/Logo.png";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
-import { Button } from "@/components/ui/button";
-import { IoSettingsSharp } from "react-icons/io5";
+import SettingsPage from "./SettingsPage";
 
 const Navbar = () => {
   return (
@@ -19,28 +9,7 @@ const Navbar = () => {
           <img src={Logo} alt="My Logo" className="tw-size-8 tw-p-0" />
           <p className="tw-font-semibold tw-mt-0.5">antsite.xyz</p>
         </div>
-        <Dialog>
-          <DialogTrigger>
-            <Button variant="outline">
-              <IoSettingsSharp
-                className="tw-h-4 tw-w-4"
-                size={"icon"}
-              ></IoSettingsSharp>
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Settings</DialogTitle>
-              <DialogDescription>
-                Edit your account here, change your theme, etc!
-              </DialogDescription>
-            </DialogHeader>
-            <div className="settings">
-              <div className="settings-left"></div>
-              <div className="settings-right"></div>
-            </div>
-          </DialogContent>
-        </Dialog>
+        <SettingsPage />
       </header>
     </>
   );
