@@ -10,9 +10,8 @@ Create a file inside the `src/config` folder, and call it `config.ts`.
 
 Copy the below template, and paste it into config.ts and fill out all the fields marked.
 
-```
+```js
 export const config = {
   (Currently, no config is needed)
 }
-
 ```
