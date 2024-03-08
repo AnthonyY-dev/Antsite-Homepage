@@ -80,5 +80,13 @@
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   /* Corrected: this is for WebKit browsers like Safari */
-  background-color: rgba(255, 255, 255, 0.1)
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.beams {
+  height: 90vh;
+
 }
