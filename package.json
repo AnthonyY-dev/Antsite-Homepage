@@ -22,6 +22,7 @@
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.352.0",
     "react": "^18.2.0",
+    "react-code-blocks": "^0.1.6",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.0",
     "react-icons": "^5.0.1",

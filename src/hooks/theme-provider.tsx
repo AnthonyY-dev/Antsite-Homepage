@@ -32,20 +32,36 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
+    const updateClassList = (themeToAdd: Theme) => {
+      root.classList.remove("light", "dark");
+      root.classList.add(themeToAdd);
+    };
 
-    root.classList.remove("light", "dark");
+    const systemThemeChangeHandler = (e: MediaQueryListEvent) => {
+      updateClassList(e.matches ? "dark" : "light");
+    };
+
+    const systemThemeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
 
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+      updateClassList(systemThemeMediaQuery.matches ? "dark" : "light");
+      systemThemeMediaQuery.addEventListener(
+        "change",
+        systemThemeChangeHandler
+      );
 
-      root.classList.add(systemTheme);
-      return;
+      // Cleanup function to remove the event listener
+      return () => {
+        systemThemeMediaQuery.removeEventListener(
+          "change",
+          systemThemeChangeHandler
+        );
+      };
+    } else {
+      updateClassList(theme);
     }
-
-    root.classList.add(theme);
   }, [theme]);
 
   const value = {
@@ -70,4 +86,19 @@ export const useTheme = () => {
     throw new Error("useTheme must be used within a ThemeProvider");
 
   return context;
+};
+
+export const getCurrentThemeString = () => {
+  const { theme } = useTheme();
+  console.log(theme);
+  if (theme === "light" || theme === "dark") {
+    return theme;
+  }
+
+  if (theme === "system") {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+  return "dark";
 };
