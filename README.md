@@ -23,3 +23,8 @@ export const config = {
   },
 };
 ```
+
+## Required Sign-in methods
+
+- Google
+- Email

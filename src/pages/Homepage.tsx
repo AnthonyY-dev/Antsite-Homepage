@@ -71,7 +71,7 @@ const Homepage = () => {
   createAnthony();`;
 
   return (
-    <>
+    <div style={{ position: "absolute", top: 0 }}>
       <header className="homepage-header">
         <Typewriter
           words={["Welcome to antsite.xyz", "Portfolio of Anthony Y"]}
@@ -116,7 +116,7 @@ const Homepage = () => {
           ></CodeBlock>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
