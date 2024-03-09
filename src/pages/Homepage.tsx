@@ -4,6 +4,8 @@ import React from "react";
 import { CodeBlock, a11yLight, dracula } from "react-code-blocks";
 import ProgrammerLangDark from "@/assets/plangArrowDark.png";
 import ProgrammerLangLight from "@/assets/plangArrowLight.png";
+import { Typewriter } from "react-simple-typewriter";
+import { Type } from "lucide-react";
 
 const Homepage = () => {
   //DATE CALCULATION
@@ -49,7 +51,7 @@ const Homepage = () => {
     { languageName: "HTML", icon: "iconURL" },
     { languageName: "CSS", icon: "iconURL" },
   ];
-  //THEMING
+  //General
   const theme = getCurrentThemeString();
 
   const codeBlockText = `const Anthony = asnyc () => {
@@ -71,15 +73,22 @@ const Homepage = () => {
   return (
     <>
       <header className="homepage-header">
-        Welcome to <span className="tw-text-lime-600">antsite.xyz</span>
+        <Typewriter
+          words={["Welcome to antsite.xyz", "Portfolio of Anthony Y"]}
+          cursor
+          cursorColor="#4287f5"
+          loop={Infinity}
+        ></Typewriter>
       </header>
+
       <BackgroundBeams></BackgroundBeams>
       <div className="section2homepage">
         <div className="section2homepagetext">
           <header className="s2hth">I am Anthony Y</header>
+
           <p className="tw-p-2 tw-text-xl">
             I started coding at the age of nine, which was{" "}
-            <span className="tw-text-blue-400">
+            <span className="tw-text-green-400">
               {ageInYears} years and {days} days ago
             </span>
             ! The reason I started coding is because{" "}
@@ -88,7 +97,9 @@ const Homepage = () => {
             VBScript. I then got better at coding, and learnt a bit of
             javascript. However, I thought it was useless because it didn't have
             alot of libraries at the time. Now, I am{" "}
-            <span className="tw-to-blue-400">{calculateAge("04 14 2010")}</span>{" "}
+            <span className="tw-text-blue-400">
+              {calculateAge("04 14 2010")}
+            </span>{" "}
             years old! I now know the languages below.
           </p>
         </div>
