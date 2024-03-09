@@ -9,7 +9,9 @@ const Navbar = () => {
           <img src={Logo} alt="My Logo" className="tw-size-8 tw-p-0" />
           <p className="tw-font-semibold tw-mt-0.5">antsite.xyz</p>
         </div>
-        <SettingsPage />
+        <div className="navbar-buttons">
+          <SettingsPage />
+        </div>
       </header>
     </>
   );
