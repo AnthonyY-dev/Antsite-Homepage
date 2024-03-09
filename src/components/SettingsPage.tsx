@@ -35,7 +35,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 
 const generalFormSchema = z.object({
   theme: z.string({ required_error: "Please select your theme." }),
