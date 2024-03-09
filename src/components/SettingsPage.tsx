@@ -21,27 +21,90 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTheme } from "@/hooks/theme-provider";
+
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const generalFormSchema = z.object({
+  theme: z.string({ required_error: "Please select your theme." }),
+});
 
 const SettingsPage = () => {
+  const { setTheme } = useTheme();
+
+  const generalForm = useForm<z.infer<typeof generalFormSchema>>({
+    resolver: zodResolver(generalFormSchema),
+    defaultValues: {
+      theme: "",
+    },
+  });
+
+  function generalOnSubmit(values: z.infer<typeof generalFormSchema>) {
+    // @ts-ignore
+    setTheme(values.theme);
+  }
+
   const pages = [
     {
       pageTitle: "General",
       button: { icon: <IoSettingsSharp />, text: "General" },
       content: (
         <>
-          <Select>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Theme" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Theme</SelectLabel>
-                <SelectItem value="light">Light</SelectItem>
-                <SelectItem value="dark">Dark</SelectItem>
-                <SelectItem value="system">System</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <Form {...generalForm}>
+            <form
+              onSubmit={generalForm.handleSubmit(generalOnSubmit)}
+              className="space-y-8"
+            >
+              <FormField
+                control={generalForm.control}
+                name="theme"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Theme</FormLabel>
+                    <FormControl>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select theme" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectGroup>
+                            <SelectLabel>Themes</SelectLabel>
+                            <SelectItem value="light">Light</SelectItem>
+                            <SelectItem value="dark">Dark</SelectItem>
+                            <SelectItem value="system">System</SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormDescription>
+                      This is the way your page will look.
+                    </FormDescription>
+                    <Button
+                      type="submit"
+                      id="save"
+                      style={{ display: "none" }}
+                    />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </form>
+          </Form>
         </>
       ),
     },
@@ -89,9 +152,15 @@ const SettingsPage = () => {
         </div>
         <DialogFooter>
           <DialogClose>
-            <Button variant={"outline"}>Cancel</Button>
+            <Button variant={"outline"}>Close</Button>
           </DialogClose>
-          <Button type="submit">Save changes</Button>
+          <Button
+            onClick={() => {
+              document.getElementById("save")?.click();
+            }}
+          >
+            Save changes
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
