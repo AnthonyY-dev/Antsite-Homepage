@@ -5,7 +5,6 @@ import { CodeBlock, a11yLight, dracula } from "react-code-blocks";
 import ProgrammerLangDark from "@/assets/plangArrowDark.png";
 import ProgrammerLangLight from "@/assets/plangArrowLight.png";
 import { Typewriter } from "react-simple-typewriter";
-import { Type } from "lucide-react";
 
 const Homepage = () => {
   //DATE CALCULATION
@@ -54,7 +53,7 @@ const Homepage = () => {
   //General
   const theme = getCurrentThemeString();
 
-  const codeBlockText = `const Anthony = asnyc () => {
+  const codeBlockText = `const createAnthony = asnyc () => {
     const name = "Anthony Y";
     const birthday = 'April 14, 2010';
     const languagesKnown = [${languages
@@ -68,7 +67,8 @@ const Homepage = () => {
     const reasonToStartCoding = \"Covid-19\"
 
     await makeHuman(name, birthday, languagesKnown, reasonToStartCoding)
-  }`;
+  }
+  createAnthony();`;
 
   return (
     <>
@@ -95,8 +95,8 @@ const Homepage = () => {
             <span className="tw-text-red-600">covid hit</span>, so I went and
             tried to make some programs in my first programming language,
             VBScript. I then got better at coding, and learnt a bit of
-            javascript. However, I thought it was useless because it didn't have
-            alot of libraries at the time. Now, I am{" "}
+            Javascript. However, I thought it was useless because it didn't have
+            a lot of libraries at the time. Instead, I learnt Python. Now, I am{" "}
             <span className="tw-text-blue-400">
               {calculateAge("04 14 2010")}
             </span>{" "}
