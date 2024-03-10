@@ -1,6 +1,5 @@
 import { BackgroundBeams } from "@/components/ui/Beams";
 import { getCurrentThemeString } from "@/hooks/theme-provider";
-import React from "react";
 import { CodeBlock, a11yLight, dracula } from "react-code-blocks";
 import ProgrammerLangDark from "@/assets/plangArrowDark.png";
 import ProgrammerLangLight from "@/assets/plangArrowLight.png";

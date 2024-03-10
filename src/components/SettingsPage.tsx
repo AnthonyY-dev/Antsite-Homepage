@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogClose,
@@ -11,7 +11,6 @@ import {
 } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { IoSettingsSharp } from "react-icons/io5";
-import { FaUser } from "react-icons/fa";
 import {
   Select,
   SelectContent,
@@ -106,11 +105,6 @@ const SettingsPage = () => {
           </Form>
         </>
       ),
-    },
-    {
-      pageTitle: "Account",
-      button: { icon: <FaUser />, text: "Account" },
-      content: <p>Todo</p>,
     },
   ];
   const [currentPage, goToPage] = useState(0);
