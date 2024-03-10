@@ -179,3 +179,22 @@
 .section2homepagemiddle {
   width: 150px;
 }
+
+.section2langs {
+
+  width: 100%;
+  height: 200px;
+  margin-top: -200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sec2lang {
+  /* background-color: red; */
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  aspect-ratio: 1;
+
+}

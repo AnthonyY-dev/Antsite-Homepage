@@ -44,11 +44,26 @@ const Homepage = () => {
   }
   //Langs
   const languages = [
-    { languageName: "Javascript", icon: "iconURL" },
-    { languageName: "Typescript", icon: "iconURL" },
-    { languageName: "Python", icon: "iconURL" },
-    { languageName: "HTML", icon: "iconURL" },
-    { languageName: "CSS", icon: "iconURL" },
+    {
+      languageName: "Javascript",
+      icon: "https://firebasestorage.googleapis.com/v0/b/ants-1929d.appspot.com/o/js.png?alt=media&token=9a139725-27a8-4be2-912e-b2f72c8c6eeb",
+    },
+    {
+      languageName: "Typescript",
+      icon: "https://firebasestorage.googleapis.com/v0/b/ants-1929d.appspot.com/o/ts-removebg-preview.png?alt=media&token=824756be-fd2f-4d26-b4ab-72f2a726e122",
+    },
+    {
+      languageName: "Python",
+      icon: "https://firebasestorage.googleapis.com/v0/b/ants-1929d.appspot.com/o/py-removebg-preview.png?alt=media&token=f3bd0f9f-79fa-4591-bcd8-f5a040d12582",
+    },
+    {
+      languageName: "HTML",
+      icon: "https://firebasestorage.googleapis.com/v0/b/ants-1929d.appspot.com/o/html-removebg-preview.png?alt=media&token=0c045d7a-4a9f-46ad-b9c7-5ae7e0b947e6",
+    },
+    {
+      languageName: "CSS",
+      icon: "https://firebasestorage.googleapis.com/v0/b/ants-1929d.appspot.com/o/css-removebg-preview.png?alt=media&token=7637a42d-b1a2-43f1-89c2-5ab126c3c16c",
+    },
   ];
   //General
   const theme = getCurrentThemeString();
@@ -115,6 +130,11 @@ const Homepage = () => {
             theme={theme == "dark" ? dracula : a11yLight}
           ></CodeBlock>
         </div>
+      </div>
+      <div className="section2langs">
+        {languages.map((lang) => (
+          <img src={lang.icon} className="sec2lang" />
+        ))}
       </div>
     </div>
   );
