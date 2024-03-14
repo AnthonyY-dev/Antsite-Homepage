@@ -92,6 +92,7 @@ const Homepage = () => {
           cursor
           cursorColor="#4287f5"
           loop={Infinity}
+          
         ></Typewriter>
       </header>
 

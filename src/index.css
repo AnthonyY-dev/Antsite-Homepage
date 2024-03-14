@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +6,6 @@
 :root {
   color-scheme: dark;
 }
-
 
 @layer base {
   :root {
@@ -55,7 +54,6 @@
   }
 }
 
-
 @layer base {
   * {
     @apply tw-border-border;
@@ -71,7 +69,7 @@
   -webkit-backdrop-filter: blur(5px);
   /* Corrected: this is for WebKit browsers like Safari */
   background-color: rgba(255, 255, 255, 0.1);
-  height: 10vh;
+  height: 75px;
   display: flex;
   align-items: center;
   margin-bottom: -10vh;
@@ -80,22 +78,21 @@
 
 .beams {
   height: 100vh;
-
 }
 
 .homepage-header {
   position: absolute;
-  top: 20%;
-  left: 200px;
+  top: 25%;
+  left: 50%;
   font-size: 100px;
-  font-family: "Montserrat";
+  font-family: "Poppins";
+  transform: translate(-50%, -50%);
 }
 
 .navbar-child {
   display: flex;
   flex-direction: row;
   align-items: center;
-
 }
 
 .settings {
@@ -123,7 +120,7 @@
   gap: 10px;
   overflow: scroll;
   max-height: 80vh;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 .settingPageBtn {
@@ -143,12 +140,11 @@
 
 .settingPageTitle {
   font-size: 24px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 500;
 }
 
 .section2homepage {
-
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
@@ -167,13 +163,11 @@
   width: 650px;
 }
 
-
 .s2hth {
   display: flex;
   justify-content: center;
   font-size: 32px;
-  font-family: 'Poppins';
-
+  font-family: "Poppins";
 }
 
 .section2homepagemiddle {
@@ -181,7 +175,6 @@
 }
 
 .section2langs {
-
   width: 100%;
   height: 200px;
   margin-top: -200px;
@@ -196,5 +189,4 @@
   height: 100px;
   overflow: hidden;
   aspect-ratio: 1;
-
 }
