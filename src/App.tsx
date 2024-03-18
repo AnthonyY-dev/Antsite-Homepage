@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
 
@@ -5,7 +6,10 @@ const App = () => {
   return (
     <>
       <Navbar></Navbar>
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage/>}/>
+      </Routes>
+      
     </>
   );
 };
